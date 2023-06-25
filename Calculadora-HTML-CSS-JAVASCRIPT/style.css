@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+body {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3em;
+}
+
+#calc {
+  width: 400px;
+  padding: 0.5em;
+  background-color: #c4c4c4;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+#calc h3 {
+  font-size: 0.8em;
+  font-weight: 300;
+  color: #666;
+}
+
+#operations {
+  text-align: right;
+}
+
+#previous-operation,
+#current-operation {
+  min-height: 1.6em;
+  overflow-wrap: break-word;
+  padding: 0.2em;
+}
+
+#previous-operation {
+  color: #777;
+}
+
+#current-operation {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+#buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3px;
+}
+
+#buttons-container button {
+  border: 1px solid transparent;
+  border-radius: 0;
+  height: 4em;
+  font-size: 1.2em;
+  background-color: #dbdbdb;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  padding: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#buttons-container .number {
+  background-color: #f3f3f3;
+}
+
+#buttons-container button:hover {
+  background-color: #bababa;
+  border-color: #999;
+}
+
+#buttons-container #equal-btn {
+  grid-column: span 2;
+  background-color: #75a5cb;
+}
+
+#buttons-container #equal-btn:hover {
+  background-color: #3a91d8;
+}
+
+#buttons-container #equal-btn:active {
+  /* Adicionar destaque ao botão de igualdade quando pressionado */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width: 767px) {
+  /* Adicionar estilo diferente para tela da calculadora em dispositivos móveis */
+  #calc {
+    width: 100%;
+  }
+  #buttons-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  #buttons-container #equal-btn {
+    grid-column: span 2;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Adicionar estilo diferente para página da calculadora em modo noturno */
+  body {
+    background-color: #222;
+  }
+  #calc {
+    background-color: #444;
+    color: #fff;
+  }
+}
